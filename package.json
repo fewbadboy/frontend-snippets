@@ -29,5 +29,10 @@
   },
   "dependencies": {
     "@vscode/vsce": "^3.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fewbadboy/frontend-snippets"
+  },
+  "license": "MIT"
 }
