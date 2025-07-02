@@ -1,0 +1,23 @@
+{
+  "Vue3 SFCs": {
+    "prefix": "vsf",
+    "body": [
+      "<script setup>",
+      "import { ref, computed, watchEffect, onWatcherCleanup, onMounted } from 'vue';",
+      "",
+      "const msg = ref('Hello Vue 3');",
+      "",
+      "onMounted(() => {})",
+      "",
+      "</script>",
+      "",
+      "<template>",
+      "  <div>{{ msg }}</div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "</style>"
+    ],
+    "description": "Vue Single-File Components"
+  }
+}

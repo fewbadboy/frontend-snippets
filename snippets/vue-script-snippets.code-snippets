@@ -1,0 +1,61 @@
+{
+  "Vue3 Directive": {
+    "prefix": "vdi",
+    "body": [
+      "const v${1:Directive} = {",
+      "  mounted: (el) => {",
+      "    el.classList.add('is-height')",
+      "  }",
+      "}"
+    ],
+    "description": "Vue Custom Directives"
+  },
+  "Vue3 Writable Computed": {
+    "prefix": "vwc",
+    "body": [
+      "const ${1:computedName} = computed({",
+      "  get(previous) {  },",
+      "  set(newValue) {  }",
+      "})"
+    ],
+    "description": "Vue3 writable computed with the previous value"
+  },
+  "Vue3 WatchEffect": {
+    "prefix": "vwe",
+    "body": [
+      "watchEffect(async() => {",
+      "",
+      "  const { response, loading, cancel } = ${1:requestName}()",
+      "  onWatcherCleanup(cancel)",
+      "  // todo: set value",
+      "  // data.value = await response",
+      "})"
+    ],
+    "description": "Vue3 writable computed with the previous value"
+  },
+  "Axios Get": {
+    "prefix": "agt",
+    "body": [
+      "// @see https://axios-http.com/docs/req_config",
+      "export function ${1:requestName}(params) {",
+      "  const loading = ref(true)",
+      "  const controller = new AbortController()",
+      "",
+      "  const response = request({",
+      "    url: '${2:url}',",
+      "    method: 'get',",
+      "    params,",
+      "    // responseType: 'blob', // 流请求",
+      "    signal: controller.signal",
+      "  }).finally(() => {",
+      "    loading.value = false",
+      "  })",
+      "",
+      "  const cancel = () => controller.abort()",
+      "",
+      "  return { response, loading, cancel }",
+      "})"
+    ],
+    "description": "Axios Get Request"
+  }
+}
