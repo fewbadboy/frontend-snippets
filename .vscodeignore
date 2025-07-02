@@ -2,3 +2,9 @@
 .vscode-test/**
 .gitignore
 vsc-extension-quickstart.md
+
+# 忽略 node_modules，毕竟 snippets 插件不需要额外依赖
+node_modules/
+
+README.md
+LICENSE
