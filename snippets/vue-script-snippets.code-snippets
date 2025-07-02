@@ -1,6 +1,6 @@
 {
-  "Vue3 Directive": {
-    "prefix": "vdi",
+  "Vue3 Custom Directive": {
+    "prefix": "vcd",
     "body": [
       "const v${1:Directive} = {",
       "  mounted: (el) => {",
@@ -33,8 +33,8 @@
     ],
     "description": "Vue3 writable computed with the previous value"
   },
-  "Axios Get": {
-    "prefix": "agt",
+  "Axios Get Request": {
+    "prefix": "agr",
     "body": [
       "// @see https://axios-http.com/docs/req_config",
       "export function ${1:requestName}(params) {",
