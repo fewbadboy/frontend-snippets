@@ -18,6 +18,10 @@
         "path": "./snippets/vue-snippets.code-snippets"
       },
       {
+        "language": "html",
+        "path": "./snippets/vue-template-snippets.code-snippets"
+      },
+      {
         "language": "javascript",
         "path": "./snippets/vue-script-snippets.code-snippets"
       },

@@ -1,14 +1,28 @@
 {
+  "Vue3 Component v-model": {
+    "prefix": "vcm",
+    "body": [
+      "const [model, modifiers] = defineModel('${1:attrName}', {",
+      "  set(value) {",
+      "    if (modifiers.lower) {",
+      "      return value.toLowerCase()",
+      "    }",
+      "  }",
+      "})"
+    ],
+    "description": "Vue3 Component two-way binding"
+  },
   "Vue3 Custom Directive": {
     "prefix": "vcd",
     "body": [
+      "// @see https://vuejs.org/guide/reusability/custom-directives.html#directive-hooks",
       "const v${1:Directive} = {",
-      "  mounted: (el) => {",
-      "    el.classList.add('is-height')",
+      "  mounted: (el, binding) => {",
+      "    el.classList.add(binding.value)",
       "  }",
       "}"
     ],
-    "description": "Vue Custom Directives"
+    "description": "Vue3 Custom Directives"
   },
   "Vue3 Writable Computed": {
     "prefix": "vwc",
@@ -23,15 +37,28 @@
   "Vue3 WatchEffect": {
     "prefix": "vwe",
     "body": [
-      "watchEffect(async() => {",
+      "watchEffect(async(onCleanup) => {",
       "",
       "  const { response, loading, cancel } = ${1:requestName}()",
-      "  onWatcherCleanup(cancel)",
+      "  onCleanup(cancel)",
       "  // todo: set value",
       "  // data.value = await response",
       "})"
     ],
-    "description": "Vue3 writable computed with the previous value"
+    "description": "Vue3 WatchEffect"
+  },
+  "Vue3 Async Components": {
+    "prefix": "vac",
+    "body": [
+      "const ${1:AsyncComp} = defineAsyncComponent({",
+      "  loader: () => import(''),",
+      "  loadingComponent: LoadingComponent,",
+      "  errorComponent: ErrorComponent,",
+      "  delay: 300,",
+      "  timeout: 5000",
+      "})"
+    ],
+    "description": "Vue3  load a component"
   },
   "Axios Get Request": {
     "prefix": "agr",
@@ -54,7 +81,7 @@
       "  const cancel = () => controller.abort()",
       "",
       "  return { response, loading, cancel }",
-      "})"
+      "}"
     ],
     "description": "Axios Get Request"
   }

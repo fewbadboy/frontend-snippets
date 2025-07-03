@@ -1,0 +1,36 @@
+{
+  "Vue3 Named Slots": {
+    "prefix": "vns",
+    "body": [
+      "<div class=\"container\">",
+      "  <header v-if=\"slots.header\">",
+      "    <slot name=\"header\" />",
+      "  </header>",
+      "  <main>",
+      "    <slot />",
+      "  </main>",
+      "  <footer>",
+      "    <slot name=\"footer\" />",
+      "  </footer>",
+      "</div>"
+    ],
+    "description": "Vue3 Named Slots"
+  },
+  "Vue3 Component Slots Use": {
+    "prefix": "vcs",
+    "body": [
+      "<${1:CompName}>",
+      "  <template #header>",
+      "    <h1>Here might be a page title</h1>",
+      "  </template>",
+      "  <template #default>",
+      "    <p>A paragraph for the main content.</p>",
+      "  </template>",
+      "  <template #footer>",
+      "    <p>Here's some contact info</p>",
+      "  </template>",
+      "</${1}>"
+    ],
+    "description": "Vue3 Named Slots"
+  }
+}
