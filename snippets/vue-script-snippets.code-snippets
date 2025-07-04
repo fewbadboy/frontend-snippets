@@ -1,65 +1,4 @@
 {
-  "Vue3 Component v-model": {
-    "prefix": "vcm",
-    "body": [
-      "const [model, modifiers] = defineModel('${1:attrName}', {",
-      "  set(value) {",
-      "    if (modifiers.lower) {",
-      "      return value.toLowerCase()",
-      "    }",
-      "  }",
-      "})"
-    ],
-    "description": "Vue3 Component two-way binding"
-  },
-  "Vue3 Custom Directive": {
-    "prefix": "vcd",
-    "body": [
-      "// @see https://vuejs.org/guide/reusability/custom-directives.html#directive-hooks",
-      "const v${1:Directive} = {",
-      "  mounted: (el, binding) => {",
-      "    el.classList.add(binding.value)",
-      "  }",
-      "}"
-    ],
-    "description": "Vue3 Custom Directives"
-  },
-  "Vue3 Writable Computed": {
-    "prefix": "vwc",
-    "body": [
-      "const ${1:computedName} = computed({",
-      "  get(previous) {  },",
-      "  set(newValue) {  }",
-      "})"
-    ],
-    "description": "Vue3 writable computed with the previous value"
-  },
-  "Vue3 WatchEffect": {
-    "prefix": "vwe",
-    "body": [
-      "watchEffect(async(onCleanup) => {",
-      "",
-      "  const { response, loading, cancel } = ${1:requestName}()",
-      "  onCleanup(cancel)",
-      "  // todo: set value",
-      "  // data.value = await response",
-      "})"
-    ],
-    "description": "Vue3 WatchEffect"
-  },
-  "Vue3 Async Components": {
-    "prefix": "vac",
-    "body": [
-      "const ${1:AsyncComp} = defineAsyncComponent({",
-      "  loader: () => import(''),",
-      "  loadingComponent: LoadingComponent,",
-      "  errorComponent: ErrorComponent,",
-      "  delay: 300,",
-      "  timeout: 5000",
-      "})"
-    ],
-    "description": "Vue3  load a component"
-  },
   "Axios Get Request": {
     "prefix": "agr",
     "body": [
@@ -84,5 +23,114 @@
       "}"
     ],
     "description": "Axios Get Request"
+  },
+  "Pinia Define Store": {
+    "prefix": "pdf",
+    "body": [
+      "import { ref, computed } from 'vue'",
+      "import { defineStore } from 'pinia'",
+      "",
+      "/**",
+      "  *  @see https://pinia.vuejs.org/core-concepts/state.html#Mutating-the-state",
+      "  */",
+      "export const useCounterStore = defineStore('counter', () => {",
+      "  const count = ref(0)",
+      "  const doubleCount = computed(() => count.value * 2)",
+      "",
+      "  function increment() { count.value++ }",
+      "",
+      "  return { count, doubleCount, increment }",
+      "})"
+    ],
+    "description": "Pinia Defining a Store"
+  },
+  "Vue3 Async Components": {
+    "prefix": "vac",
+    "body": [
+      "const ${1:AsyncComp} = defineAsyncComponent({",
+      "  loader: () => import(''),",
+      "  loadingComponent: LoadingComponent,",
+      "  errorComponent: ErrorComponent,",
+      "  delay: 300,",
+      "  timeout: 5000",
+      "})"
+    ],
+    "description": "Vue3 load a component"
+  },
+  "Vue3 Custom Directive": {
+    "prefix": "vcd",
+    "body": [
+      "// @see https://vuejs.org/guide/reusability/custom-directives.html#directive-hooks",
+      "const v${1:Directive} = {",
+      "  mounted: (el, binding) => {",
+      "    el.classList.add(binding.value)",
+      "  }",
+      "}"
+    ],
+    "description": "Vue3 Custom Directives"
+  },
+  "Vue3 Component v-model": {
+    "prefix": "vcm",
+    "body": [
+      "const [model, modifiers] = defineModel('${1:attrName}', {",
+      "  set(value) {",
+      "    if (modifiers.lower) {",
+      "      return value.toLowerCase()",
+      "    }",
+      "  }",
+      "})"
+    ],
+    "description": "Vue3 Component two-way binding"
+  },
+  "Vue3 Writable Computed": {
+    "prefix": "vwc",
+    "body": [
+      "const ${1:computedName} = computed({",
+      "  get(previous) {  },",
+      "  set(newValue) {  }",
+      "})"
+    ],
+    "description": "Vue3 writable computed with the previous value"
+  },
+  "Vue3 WatchEffect": {
+    "prefix": "vwe",
+    "body": [
+      "watchEffect(async(onCleanup) => {",
+      "",
+      "  const { response, loading, cancel } = ${1:requestName}()",
+      "  onCleanup(cancel)",
+      "  // todo: set value",
+      "  // data.value = await response",
+      "  // response.then((res) => { data.value = res })",
+      "})"
+    ],
+    "description": "Vue3 WatchEffect"
+  },
+  "Vue3 Watch Multiple Sources": {
+    "prefix": "vwm",
+    "body": [
+      "const x = ref(0)",
+      "const y = ref(0)",
+      "watch([x, () => x.value + y.value], ([newX, sum]) => {",
+      "",
+      "  onWatcherCleanup(() => {})",
+      "})"
+    ],
+    "description": "Vue3 Watch Multiple Sources"
+  },
+  "Vue-Router Instance": {
+    "prefix": "vri",
+    "body": [
+      "import { createWebHistory, createWebHashHistory, createRouter } from 'vue-router'",
+      "",
+      "const router = createRouter({",
+      "  history: createWebHistory({ base: '/' }),",
+      "  routes: [],",
+      "  scrollBehavior(to, from, savedPosition) {",
+      "    return { top: 0 }",
+      "  }",
+      "})"
+    ],
+    "description": "Creating the router instance"
   }
 }

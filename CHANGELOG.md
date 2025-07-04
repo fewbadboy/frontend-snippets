@@ -6,7 +6,19 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-## [0.0.1] - 2025-07-01
+## [0.0.4] - 2025-07-04
+
+### Added
+
+- Watch Multiple Sources
+- Pinia Define Store
+- Vue-Router Instance
+
+### Change
+
+- Improve `Vue3 WatchEffect`
+
+## [0.0.3] - 2025-07-03
 
 ### Added
 
@@ -23,7 +35,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Fix `Axios Get` the extra brackets on the last line
 
-## [0.0.1] - 2025-07-01
+## [0.0.2] - 2025-07-01
 
 ### Added
 
@@ -32,3 +44,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Vue3 Writable Computed
 - Vue3 WatchEffect
 - Axios Get
+
+## [0.0.1] - 2025-07-01
+
+### Added
+
+- Initial
